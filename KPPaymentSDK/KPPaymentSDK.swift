@@ -1,5 +1,5 @@
 //
-//  KPPayment.swift
+//  KPPaymentSDK.swift
 //  KPPaymentSDK
 //
 //  Created by Zaid M. Said on 01/04/2018.

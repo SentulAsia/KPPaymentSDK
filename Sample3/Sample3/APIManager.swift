@@ -34,7 +34,7 @@ struct APIManager {
                         return
                 }
 
-                let deeplinkModelObj = Deeplink(fromDictionary: responseDictionary)
+                let deeplinkModelObj = Deeplink(from: responseDictionary)
 
                 if deeplinkModelObj.deeplinkURL == nil {
                     let message = deeplinkModelObj.message ?? Constant.Message.failureDefault

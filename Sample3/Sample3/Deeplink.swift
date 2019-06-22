@@ -31,7 +31,7 @@ struct Deeplink : Codable {
         self.message = nil
     }
 
-    init(fromDictionary dictionary: [String: Any]) {
+    init(from dictionary: [String: Any]) {
         self.deeplinkURL = dictionary["DeepLinkUrl"] as? String
         self.createAt = (dictionary["CreateAt"] as? String)?.formattedKiple
         self.referenceId = dictionary["ReferenceId"] as? String
