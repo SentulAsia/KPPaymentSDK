@@ -9,7 +9,7 @@
 import XCTest
 @testable import KPPaymentSDK
 
-class KPPaymentSDKTests: XCTestCase {
+final class KPPaymentSDKTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -32,5 +32,8 @@ class KPPaymentSDKTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
-    
+
+    static var allTests = [
+        ("testExample", testExample),
+    ]
 }
