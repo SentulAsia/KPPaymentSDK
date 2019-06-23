@@ -17,14 +17,17 @@ Pod::Spec.new do |s|
 
   s.name         = "KPPaymentSDK"
   s.version      = "1.1.0"
-  s.summary      = "Pay with kiplePay."
+  s.summary      = "This library allows you to integrate kiplePay into your iOS app."
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
   #   * Try to keep it short, snappy and to the point.
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
-  s.description  = "This library allows you to integrate kiplePay into your iOS app."
+  s.description  = <<-DESC
+                     KPPaymentSDK is a kiplePay deeplink framework written in Swift,
+                     created for kiplePay app. It uses CryptoSwift.
+                   DESC
 
   s.homepage     = "https://kiplepay.com"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
@@ -129,7 +132,7 @@ Pod::Spec.new do |s|
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # s.dependency "JSONKit", "~> 1.4"
 
-  s.cocoapods_version = '>= 1.4.0'
+  s.cocoapods_version = '>= 1.6.0'
   if s.respond_to?(:swift_versions) then
     s.swift_versions = ["5.0"]
   else
