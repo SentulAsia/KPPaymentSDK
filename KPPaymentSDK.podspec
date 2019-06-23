@@ -37,8 +37,7 @@ Pod::Spec.new do |s|
   #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
   #
 
-  s.license      = "MIT"
-  # s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
+  s.license      = { :type => "MIT", :file => "LICENSE" }
 
 
   # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -51,7 +50,7 @@ Pod::Spec.new do |s|
   #  profile URL.
   #
 
-  s.author             = { "Kiple Developer" => "kipledeveloper@kiplepay.com" }
+  s.author             = { "Kiple Sdn Bhd and its affiliates" => "kipledeveloper@kiplepay.com" }
   s.social_media_url   = "https://www.facebook.com/kiplepay/"
 
   # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -60,7 +59,6 @@ Pod::Spec.new do |s|
   #  the deployment target. You can optionally include the target after the platform.
   #
 
-  # s.platform     = :ios
   s.platform     = :ios, "9.0"
 
   #  When using multiple platforms
@@ -87,7 +85,7 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "KPPaymentSDK", "KPPaymentSDK/*.{h,swift}"
+  s.source_files  = "KPPaymentSDK/*.{h,swift}", "KPPaymentSDK/**/*.{h,swift}"
   # s.exclude_files = "Classes/Exclude"
 
   # s.public_header_files = "Classes/**/*.h"
@@ -113,7 +111,7 @@ Pod::Spec.new do |s|
   #  the lib prefix of their name.
   #
 
-  # s.framework  = "SomeFramework"
+  s.framework = "XCTest"
   # s.frameworks = "SomeFramework", "AnotherFramework"
 
   # s.library   = "iconv"
@@ -131,6 +129,11 @@ Pod::Spec.new do |s|
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # s.dependency "JSONKit", "~> 1.4"
 
-  s.swift_version = "5.0"
+  s.cocoapods_version = '>= 1.4.0'
+  if s.respond_to?(:swift_versions) then
+    s.swift_versions = ["5.0"]
+  else
+    s.swift_version = "5.0"
+  end
 
 end
