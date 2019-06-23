@@ -99,12 +99,12 @@ Then run `pod install` with CocoaPods 1.4.0 or newer.
 
 #### Manually
 
-KPPaymentSDK in your project requires the following steps:_
+KPPaymentSDK in your project requires the following steps:
 
 1. Add KPPaymentSDK as a [submodule](http://git-scm.com/docs/git-submodule) by opening the Terminal, `cd`-ing into your top-level project directory, and entering the command `git submodule add https://github.com/m2c/KPPaymentSDK.git`
 2. Open the `KPPaymentSDK` folder, and drag `KPPaymentSDK.xcodeproj` into the file navigator of your app project.
 3. In Xcode, navigate to the target configuration window by clicking on the blue project icon, and selecting the application target under the "Targets" heading in the sidebar.
-4. Ensure that the deployment target of KPPaymentSDK.framework matches that of the application target.
+4. Ensure that the deployment target of `KPPaymentSDK.framework` matches that of the application target.
 5. In the tab bar at the top of that window, open the "Build Phases" panel.
 6. Expand the "Link Binary with Libraries" group, and add `KPPaymentSDK.framework`.
 7. Click on the `+` button at the top left of the panel and select "New Copy Files Phase". Rename this new phase to "Copy Frameworks", set the "Destination" to "Frameworks", and add `KPPaymentSDK.framework`.
