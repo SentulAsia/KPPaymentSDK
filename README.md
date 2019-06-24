@@ -115,6 +115,6 @@ KPPaymentSDK in your project requires the following steps:
 
 ### License
 
-KPPaymentSDK is released under the MIT license. See [LICENSE] for details.
+KPPaymentSDK is released under the BSD license. See [LICENSE] for details.
 
 [LICENSE]: /LICENSE
