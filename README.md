@@ -4,7 +4,7 @@
 [![Platforms iOS](https://img.shields.io/badge/Platforms-iOS-lightgray.svg?style=flat)](http://www.apple.com/ios/)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg)](https://github.com/Carthage/KPPaymentSDK)
 [![Version](https://img.shields.io/cocoapods/v/KPPaymentSDK.svg?style=flat)](http://cocoapods.org/pods/KPPaymentSDK)
-[![License MIT](https://img.shields.io/badge/License-MIT-lightgrey.svg?style=flat)](https://opensource.org/licenses/MIT)
+[![License BSD](https://img.shields.io/badge/License-BSD-lightgrey.svg?style=flat)](https://opensource.org/licenses/BSD-3Clause)
 
 KPPaymentSDK is a kiplePay deeplink framework written in Swift, created for [kiplePay](https://kiplepay.com) app.
 It uses CryptoSwift.
