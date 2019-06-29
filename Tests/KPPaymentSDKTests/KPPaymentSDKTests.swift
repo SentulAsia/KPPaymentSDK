@@ -29,30 +29,53 @@ import XCTest
 @testable import KPPaymentSDK
 
 final class KPPaymentSDKTests: XCTestCase {
-    
+
+    var sut: KPPayment!
+    var engineSpy: URLEngineSpy.Type!
+
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        self.sut = KPPayment(merchantId: 141, secret: "l43wrf8cai", isProduction: false)
+        self.engineSpy = URLEngineSpy.self
+        self.engineSpy.openURLCalled = false
+        self.engineSpy.openURLValue = nil
+        self.sut.engine = self.engineSpy
     }
-    
+
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        self.sut = nil
+        self.engineSpy = nil
         super.tearDown()
     }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+
+    func testMakePayment() {
+        // given
+        let expectedResult = true
+        let storeID = 103
+        let paymentType: KPPayment.KPPaymentType = .Payment
+        let referenceId = "abcd\(Int(arc4random_uniform(UInt32(9999))))"
+        let amount = 12.34
+
+        // when
+        self.sut.makePaymentForStoreId(storeID, withType: paymentType, withReferenceId: referenceId, andAmount: amount)
+        let actualResult = self.engineSpy.openURLCalled
+
+        // then
+        XCTAssertEqual(actualResult, expectedResult, "makePayment should make payment")
     }
 
     static var allTests = [
-        ("testExample", testExample),
+        ("testExample", testMakePayment),
     ]
+}
+
+extension KPPaymentSDKTests {
+    class URLEngineSpy: URLEngine {
+        static var openURLCalled = false
+        static var openURLValue: URL!
+        override class func open(url: URL, completionHandler: @escaping (Bool) -> Void) {
+            self.openURLCalled = true
+            self.openURLValue = url
+        }
+    }
 }

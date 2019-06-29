@@ -54,6 +54,7 @@ import UIKit
     internal var storeId: Int?
     internal var referenceId: String?
     internal var type: KPPaymentType?
+    internal var engine: URLEngine.Type
 
     @objc public weak var delegate: KPPaymentDelegate?
 
@@ -61,6 +62,7 @@ import UIKit
         self.merchantId = merchantId
         self.secret = secret
         self.isProduction = isProduction
+        self.engine = URLEngine.self
         super.init()
         NotificationCenter.default.addObserver(self, selector: #selector(self.applicationDidBecomeActive(_:)), name: UIApplication.didBecomeActiveNotification, object: nil)
         KPPaymentApplicationDelegate.shared.delegate = self

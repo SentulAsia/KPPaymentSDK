@@ -25,7 +25,7 @@
 //  OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 //  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-import Foundation
+import UIKit
 
 public extension KPPayment {
     @objc enum KPPaymentType : Int, CaseIterable {
@@ -103,16 +103,8 @@ public extension KPPayment {
         let checkSum = (param2 + param7 + param3 + param4 + param5 + param1).sha1()
 
         if let appURL = URL(string: "\(baseURL)/ios?MerchantId=\(param2)&StoreId=\(param3)&Amount=\(param4)&ReferenceId=\(param5)&CheckSum=\(checkSum)&Type=\(param6)") {
-            if #available(iOS 10.0, *) {
-                UIApplication.shared.open(appURL) { success in
-                    if !success {
-                        self.delegate?.paymentDidFinishSuccessfully(false, withMessage: Constant.unableRedirect, andPayload: [:])
-                    }
-                }
-            } else {
-                if UIApplication.shared.canOpenURL(appURL) {
-                    UIApplication.shared.openURL(appURL)
-                } else {
+            self.engine.open(url: appURL) { (success) in
+                if !success {
                     self.delegate?.paymentDidFinishSuccessfully(false, withMessage: Constant.unableRedirect, andPayload: [:])
                 }
             }
@@ -185,6 +177,20 @@ public extension KPPayment {
                 }
             }
             dataTask.resume()
+        }
+    }
+}
+
+internal class URLEngine {
+    class func open(url: URL, completionHandler: @escaping (Bool) -> Void) {
+        if UIApplication.shared.canOpenURL(url) {
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(url, completionHandler: completionHandler)
+            } else {
+                UIApplication.shared.openURL(url)
+            }
+        } else {
+            completionHandler(false)
         }
     }
 }
