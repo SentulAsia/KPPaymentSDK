@@ -4,5 +4,3 @@ your contribution to Kiple Sdn Bhd and the community, and agree by submitting th
 ---
 
 Before submitting the pull request, please make sure you have tested your changes.
-
----
