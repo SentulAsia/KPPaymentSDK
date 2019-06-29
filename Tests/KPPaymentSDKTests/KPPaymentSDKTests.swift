@@ -70,7 +70,7 @@ final class KPPaymentSDKTests: XCTestCase {
 }
 
 extension KPPaymentSDKTests {
-    class URLEngineSpy: URLEngine {
+    final class URLEngineSpy: URLEngine {
         static var openURLCalled = false
         static var openURLValue: URL!
         override class func open(url: URL, completionHandler: @escaping (Bool) -> Void) {
