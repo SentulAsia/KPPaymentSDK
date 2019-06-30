@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,23 +13,8 @@
 		2E2F3F2F2138808C00C563E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E2F3F2E2138808C00C563E3 /* Assets.xcassets */; };
 		2E2F3F322138808C00C563E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E2F3F302138808C00C563E3 /* LaunchScreen.storyboard */; };
 		2E2F3F352138808C00C563E3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E2F3F342138808C00C563E3 /* main.m */; };
-		2ECA6DFE213D12EE005DEE6E /* KPPaymentSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ECA6DFD213D12EE005DEE6E /* KPPaymentSDK.framework */; };
-		2ECA6DFF213D12EE005DEE6E /* KPPaymentSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2ECA6DFD213D12EE005DEE6E /* KPPaymentSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B823BF1122C8746900CF75B8 /* KPPaymentSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B823BF0A22C8730500CF75B8 /* KPPaymentSDK.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		2E2F3F402138810400C563E3 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				2ECA6DFF213D12EE005DEE6E /* KPPaymentSDK.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2E2F3F222138808B00C563E3 /* Sample2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sample2.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -42,7 +27,7 @@
 		2E2F3F312138808C00C563E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2E2F3F332138808C00C563E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2E2F3F342138808C00C563E3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		2ECA6DFD213D12EE005DEE6E /* KPPaymentSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KPPaymentSDK.framework; sourceTree = "<group>"; };
+		B823BF0A22C8730500CF75B8 /* KPPaymentSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KPPaymentSDK.framework; path = Carthage/Build/iOS/KPPaymentSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,7 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2ECA6DFE213D12EE005DEE6E /* KPPaymentSDK.framework in Frameworks */,
+				B823BF1122C8746900CF75B8 /* KPPaymentSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,7 +47,7 @@
 			children = (
 				2E2F3F242138808B00C563E3 /* Sample2 */,
 				2E2F3F232138808B00C563E3 /* Products */,
-				2ECA6DFD213D12EE005DEE6E /* KPPaymentSDK.framework */,
+				B823BF0722C871C400CF75B8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -90,6 +75,14 @@
 			path = Sample2;
 			sourceTree = "<group>";
 		};
+		B823BF0722C871C400CF75B8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B823BF0A22C8730500CF75B8 /* KPPaymentSDK.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -100,7 +93,7 @@
 				2E2F3F1E2138808B00C563E3 /* Sources */,
 				2E2F3F1F2138808B00C563E3 /* Frameworks */,
 				2E2F3F202138808B00C563E3 /* Resources */,
-				2E2F3F402138810400C563E3 /* Embed Frameworks */,
+				B823BF0522C8712E00CF75B8 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -156,6 +149,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B823BF0522C8712E00CF75B8 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"$(SRCROOT)/input.xcfilelist",
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+				"$(SRCROOT)/output.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2E2F3F1E2138808B00C563E3 /* Sources */ = {
@@ -313,6 +328,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Sample2",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = Sample2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -323,7 +339,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -341,6 +357,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Sample2",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = Sample2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -350,7 +367,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.kiplepay.Sample2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
